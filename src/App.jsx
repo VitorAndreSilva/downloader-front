@@ -6,6 +6,7 @@ import Download from './pages/Download/Download.jsx'
 import Signup from "./pages/Auth/Signup/Signup.jsx"
 import Login from "./pages/Auth/Login/Login.jsx"
 import PrivateRoute from "./routes/PrivateRoute.jsx"
+import PublicRoute from "./routes/PublicRoute.jsx"
 import MainLayout from "./layouts/MainLayout.jsx"
 import IsAuthenticated from "./utils/IsAuthenticated.jsx"
 
@@ -20,11 +21,22 @@ export default function App() {
                     <Navigate to="/welcome" replace />
                 )
             } />
-            <Route path="/welcome" element={<Landing />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/welcome" element={
+                <PublicRoute>
+                    <Landing />
+                </PublicRoute>
+            } />
+            <Route path="/signup" element={
+                <PublicRoute>
+                    <Signup />
+                </PublicRoute>
+            } />
+            <Route path="/login" element={
+                <PublicRoute>
+                    <Login />
+                </PublicRoute>
+            } />
             {/*Rotas privadas*/}
-            {/*Rotas com cabeçalho*/}
             <Route element={<MainLayout />}>
                 <Route path="/home" element={
                     <PrivateRoute>
