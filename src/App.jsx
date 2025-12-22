@@ -13,13 +13,13 @@ export default function App() {
     return (
         <Routes>
             {/*Rotas públicas*/}
-            {/*<Route path="/" element={
+            <Route path="/" element={
                 IsAuthenticated() ? (
                     <Navigate to="/home" replace />
                 ) : (
                     <Navigate to="/welcome" replace />
                 )
-            } />*/}
+            } />
             <Route path="/welcome" element={<Landing />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
