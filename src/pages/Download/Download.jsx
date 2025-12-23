@@ -10,6 +10,7 @@ export default function Download () {
 
     async function createDownload() {
         try {
+            console.log("TOKEN:", localStorage.getItem("token"));
             await api.post('/archive/', {
                 //user: 'vitorandre',
                 name: inputName.current.value,

@@ -1,9 +1,10 @@
+import { Navigate } from "react-router-dom";
 
 export default function IsAuthenticated() {
     const token = localStorage.getItem("token");
     if (token) {
-        return true
+        return <Navigate to="/home" replace />
     } else {
-        return false
+        return <Navigate to="/welcome" replace />
     }
 }

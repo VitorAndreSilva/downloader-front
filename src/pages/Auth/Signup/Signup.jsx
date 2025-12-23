@@ -33,7 +33,7 @@ export default function Signup() {
                 <input type="text" name="username" placeholder="Nome de usuário" ref={inputUser} />
                 <input type="email" name="email" placeholder="Email" ref={inputEmail} />
                 <input type="password" name="password" placeholder="Senha" ref={inputPassword} />
-                <button type="button" onClick={createUser}>LOGIN</button>
+                <button type="button" onClick={createUser}>Cadastrar</button>
                 <p>Já tem uma conta? <Link to="/login">Clique aqui para entrar</Link>.</p>
             </form>
         </section>

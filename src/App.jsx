@@ -14,13 +14,7 @@ export default function App() {
     return (
         <Routes>
             {/*Rotas públicas*/}
-            <Route path="/" element={
-                IsAuthenticated() ? (
-                    <Navigate to="/home" replace />
-                ) : (
-                    <Navigate to="/welcome" replace />
-                )
-            } />
+            <Route path="/" element={<IsAuthenticated />} />
             <Route path="/welcome" element={
                 <PublicRoute>
                     <Landing />
