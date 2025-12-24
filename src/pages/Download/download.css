@@ -3,19 +3,42 @@
   color: #e5e7eb;
   background: #0f172a;
   min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Título */
+.downloads h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* FORM */
 .download-form {
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
+  align-items: flex-end;
+}
+
+.form-fields {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
 }
 
 .download-form input {
   flex: 1;
-  padding: 0.75rem;
+  padding: 0.75rem 1rem;
   border-radius: 8px;
   border: none;
+  outline: none;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.download-form input::placeholder {
+  color: #9ca3af;
 }
 
 .download-form button {
@@ -24,18 +47,98 @@
   border: none;
   border-radius: 8px;
   color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
+.download-form button:hover {
+  background: #4338ca;
+}
+
+/* LISTA */
 .download-list {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1rem;
 }
 
+/* CARD */
 .download-card {
   background: #111827;
-  padding: 1.5rem;
-  border-radius: 10px;
+  padding: 1.25rem;
+  border-radius: 12px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.download-card h3 {
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.download-card a {
+  align-self: flex-start;
+  background: #22c55e;
+  color: #022c22;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.download-card a:hover {
+  background: #16a34a;
+}
+
+/* EMPTY STATE (opcional) */
+.download-list:empty::after {
+  content: "Você ainda não tem downloads.";
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .downloads {
+    padding: 1.5rem 1rem;
+  }
+
+  /* FORM */
+  .download-form {
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .form-fields {
+    flex-direction: column;
+    width: 90%;
+    max-width: 420px; 
+  }
+
+  .download-form button {
+    width: 90%;
+    max-width: 420px;
+  }
+
+  /* LISTA */
+  .download-list {
+    justify-items: center;
+  }
+
+  .download-card {
+    width: 90%;
+    max-width: 420px;
+  }
+
+  .download-card a {
+    align-self: center; /* botão no meio */
+  }
+
+  .downloads h1 {
+    font-size: 1.6rem;
+    margin-left: 3vw;
+  }
 }

@@ -42,10 +42,13 @@ export default function Download () {
             <h1>Meus Downloads</h1>
 
             <form className="download-form">
-                <input placeholder="Nome do arquivo" ref={inputName} />
-                <input placeholder="URL do arquivo" ref={inputURL} />
+                <div className="form-fields">
+                    <input placeholder="Nome do arquivo" ref={inputName} />
+                    <input placeholder="URL do arquivo" ref={inputURL} />
+                </div>
                 <button type="button" onClick={createDownload}>Adicionar</button>
             </form>
+
 
             <div className="download-list">
                 {links.map(link => (

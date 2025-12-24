@@ -23,7 +23,7 @@ body {
   margin: 0;
   font-family: var(--font-base);
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background-color: #0f172a;
   line-height: 1.6;
 }
 
