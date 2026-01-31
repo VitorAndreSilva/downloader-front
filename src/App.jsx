@@ -41,13 +41,13 @@ export default function App() {
                             <Download />
                         </PrivateRoute>
                     } />
+                    {/*Página de Admin*/}
+                    <Route path="/admin" element={
+                        <AdminRoute>
+                            <PendingUsers />
+                        </AdminRoute>
+                    }/>
                 </Route>
-                {/*Página de Admin*/}
-                <Route path="/admin" element={
-                    <AdminRoute>
-                        <PendingUsers />
-                    </AdminRoute>
-                }/>
             </Routes>
         </AuthProvider>
     )

@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import AuthContext from "./AuthContext";
 import api from "../services/api.js";
+import { useNavigate } from "react-router-dom";
 
 export default function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate()
 
     async function loadUser() {
         try {
@@ -19,6 +21,7 @@ export default function AuthProvider({ children }) {
     async function logout() {
         localStorage.removeItem("token");
         setUser(null);
+        navigate("/")
     }
 
     useEffect(() => {
