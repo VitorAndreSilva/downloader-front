@@ -12,9 +12,10 @@ export default function AuthProvider({ children }) {
         try {
             const response = await api.get("/auth/account/");
             setUser(response.data);
-            setLoading(false);
         } catch {
             setUser(null);
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -33,7 +34,7 @@ export default function AuthProvider({ children }) {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ user, loading, logout }}>
+        <AuthContext.Provider value={{ user, loading, logout, loadUser }}>
             {children}
         </AuthContext.Provider>
     )

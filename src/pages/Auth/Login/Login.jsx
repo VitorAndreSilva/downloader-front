@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import apiPublic from "../../../services/apiPublic.js";
+import useAuth from "../../../auth/useAuth.js";
 import '../auth.css'
 
 export default function Login() {
@@ -9,6 +10,7 @@ export default function Login() {
     //let token = localStorage.getItem('token');
 
     const navigate = useNavigate();
+    const { loadUser } = useAuth();
 
     async function registerUser() {
         try {
@@ -18,7 +20,7 @@ export default function Login() {
             })
             //let token = data.access;
             localStorage.setItem('token', data.access);
-
+            await loadUser();
             alert("Bem-vindo");
             navigate("/");
         } catch (error) {
