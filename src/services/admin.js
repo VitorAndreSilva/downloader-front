@@ -2,7 +2,8 @@ import api from "./api.js";
 
 export async function fetchPendingUsers() {
     const response = await api.get("/auth/pending");
-    return response.data.results;
+    //console.log(response.data);
+    return response.data;
 }
 
 export async function approveUser(userId) {

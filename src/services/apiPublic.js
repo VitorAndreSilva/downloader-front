@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://downloader-1-tl0r.onrender.com/api'
+    baseURL: 'http://localhost:8000/api'
 })
 
 export default api

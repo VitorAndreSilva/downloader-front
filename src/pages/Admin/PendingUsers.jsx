@@ -7,8 +7,13 @@ export default function PendingUsersPage() {
     
     async function loadUsers() {
         setLoading(true);
-        const data = await fetchPendingUsers();
-        setUsers(data);
+        try {
+            const data = await fetchPendingUsers();
+            setUsers(data);
+        } catch (e) {
+            console.error("Erro ao buscar usuários: ", e);
+            setUsers([]);
+        }
         setLoading(false);
     }
 
@@ -27,6 +32,7 @@ export default function PendingUsersPage() {
     }
 
     if (loading) return <p>Carregando...</p>
+    console.log(users);
 
     return (
         <div>
