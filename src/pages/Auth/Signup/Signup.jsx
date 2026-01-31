@@ -12,14 +12,14 @@ export default function Signup() {
 
     async function createUser() {
         try {
-            const { data } = await apiPublic.post('/auth/signup/', {
+            await apiPublic.post('/auth/signup/', {
                 username: inputUser.current.value,
                 email: inputEmail.current.value,
                 password: inputPassword.current.value
             });
-            localStorage.setItem('token', data.access);
-            alert("Usuário cadastrado com sucesso!");
-            navigate("/");
+            //localStorage.setItem('token', data.access);
+            alert("Solicitação enviada ao administrador!");
+            navigate("/login");
         } catch (error) {
             console.error("Erro ao criar usuário: ", error);
             alert("Erro ao cadastrar usuário");
@@ -34,7 +34,7 @@ export default function Signup() {
                 <input type="email" name="email" placeholder="Email" ref={inputEmail} />
                 <input type="password" name="password" placeholder="Senha" ref={inputPassword} />
                 <button type="button" onClick={createUser}>Cadastrar</button>
-                <p>Já tem uma conta? <Link to="/login">Clique aqui para entrar</Link>.</p>
+                <p>Já tem uma conta aprovada? <Link to="/login">Clique aqui para entrar</Link>.</p>
             </form>
         </section>
     )
