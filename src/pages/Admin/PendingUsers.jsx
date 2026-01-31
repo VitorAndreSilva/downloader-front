@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { approveUser, fetchPendingUsers, rejectUser } from "../../services/admin";
+import "../Admin/admin.css"
 
 export default function PendingUsersPage() {
     const [users, setUsers] = useState([]);
@@ -35,16 +36,18 @@ export default function PendingUsersPage() {
     console.log(users);
 
     return (
-        <div>
+        <div className="admin-container">
             <h1>Solicitações pendentes</h1>
-            {users.length === 0 && <p>Não há solicitações pendentes. Pense no futuro!</p>}
-            <div>
+            {users.length === 0 && <p className="admin-empty">Não há solicitações pendentes. Pense no futuro!</p>}
+            <div className="admin-list">
                 {users.map(user => (
-                <li key={user.id}>
+                <li key={user.id} className="admin-card">
                     <ul>
                         <p>Email: {user.email}</p>
-                        <button onClick={() => handleApprove(user.id)}>Aprovar</button>
-                        <button onClick={() => handleReject(user.id)}>Rejeitar</button>
+                        <div className="admin-actions">
+                            <button onClick={() => handleApprove(user.id)} className="btn-approve">Aprovar</button>
+                            <button onClick={() => handleReject(user.id)} className="btn-reject">Rejeitar</button>
+                        </div>
                     </ul>
                 </li>
                 ))}

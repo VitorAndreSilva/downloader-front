@@ -1,0 +1,109 @@
+/* ===== CONTAINER PRINCIPAL ===== */
+.admin-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  color: #e5e7eb;
+}
+
+/* ===== TÍTULO ===== */
+.admin-container h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+/* ===== TEXTO DE ESTADO ===== */
+.admin-empty {
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+/* ===== LISTA ===== */
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ===== CARD DO USUÁRIO ===== */
+.admin-card {
+  background: #1f2937;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===== EMAIL ===== */
+.admin-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+/* ===== AÇÕES ===== */
+.admin-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* ===== BOTÃO APROVAR ===== */
+.btn-approve {
+  background: transparent;
+  border: 1px solid #22c55e;
+  color: #22c55e;
+
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-approve:hover {
+  background: #22c55e;
+  color: #ffffff;
+}
+
+/* ===== BOTÃO REJEITAR ===== */
+.btn-reject {
+  background: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-reject:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.admin-denied {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 1.5rem;
+
+  background: #1f2937;
+  border: 1px solid #ef4444;
+  border-radius: 8px;
+
+  color: #fecaca;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+}
