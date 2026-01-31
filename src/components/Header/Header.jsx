@@ -11,7 +11,6 @@ export default function Header() {
                 <h2>Downloader</h2>
             </Link>
             <nav>
-                {/*<Link to="/downloads">Meus downloads</Link>*/}
                 {user?.is_staff && <Link to="/admin">Admin</Link>}
                 <button className="logout-btn" onClick={logout}>Logout</button>
             </nav>
