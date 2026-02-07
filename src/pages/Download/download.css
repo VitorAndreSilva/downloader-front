@@ -78,7 +78,7 @@
   word-break: break-word;
 }
 
-.download-card a {
+.download-card button {
   align-self: flex-start;
   background: #22c55e;
   color: #022c22;
@@ -89,7 +89,7 @@
   transition: background 0.2s ease;
 }
 
-.download-card a:hover {
+.download-card button:hover {
   background: #16a34a;
 }
 
@@ -133,7 +133,7 @@
     max-width: 420px;
   }
 
-  .download-card a {
+  .download-card button {
     align-self: center; /* botão no meio */
   }
 

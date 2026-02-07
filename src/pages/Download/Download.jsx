@@ -27,9 +27,27 @@ export default function Download () {
         try {
             const linksApi = await api.get('/archive/');
             setLinks(linksApi.data);
-            console.log(links)
+            //console.log(links)
         } catch (e) {
             console.error("Erro ao buscar arquivos: ", e);
+        }
+    }
+
+    async function download(id, name) {
+        try {
+            const response = await api.get(`/archive/${id}/download/`, {
+                responseType: "blob"
+            });
+            const url = window.URL.createObjectURL(new Blob ([response.data]));
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = name;
+            a.click();
+            alert("Download iniciado com sucesso");
+            window.URL.revokeObjectURL(url);
+        } catch (e) {
+            alert("Erro ao fazer download");
+            console.log("Erro no download: ", e);
         }
     }
 
@@ -54,7 +72,9 @@ export default function Download () {
                 {links.map(link => (
                 <div className="download-card" key={link.id}>
                     <h3>{link.name}</h3>
-                    <a href={link.archive} download>Baixar</a>
+                    <button onClick={() => download(link.id, link.name)}>
+                        Baixar
+                    </button>
                 </div>
                 ))}
             </div>
