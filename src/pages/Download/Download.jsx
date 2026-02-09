@@ -38,7 +38,8 @@ export default function Download () {
             const response = await api.get(`/archive/${id}/download/`, {
                 responseType: "blob"
             });
-            const url = window.URL.createObjectURL(new Blob ([response.data]));
+            //const type = response.headers['Content-Type']
+            const url = window.URL.createObjectURL(response.data);
             const a = document.createElement("a");
             a.href = url;
             a.download = name;
