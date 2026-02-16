@@ -73,9 +73,15 @@ export default function Download () {
                 {links.map(link => (
                 <div className="download-card" key={link.id}>
                     <h3>{link.name}</h3>
-                    <button onClick={() => download(link.id, link.name)}>
-                        Baixar
-                    </button>
+                    {link.status === "Pendente" && (
+                        <p>Carregando...</p>
+                    )}
+                    {link.status === "Concluído" && (
+                        <button 
+                        onClick={() => download(link.id, link.name)}>
+                            Baixar
+                        </button>
+                    )}
                 </div>
                 ))}
             </div>
